@@ -22,7 +22,8 @@ func (s *APIServer) Run() error {
 	// entry point of the app using gin
 	r := gin.Default()
 
-	api := r.Group("/api/v1/user")
+	// v1 apis
+	api := r.Group("/api/v1")
 
 	userRouteHandler := routes.UserRouteHandler()
 	userRouteHandler.RegisterUserRoutes(api)
